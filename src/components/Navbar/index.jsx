@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import { Container, NavItem, NavItems } from "./styles";
+import { Link } from "gatsby";
 
-const Navbar = ({ links }) => {
-  const [active, setActive] = useState(0);
-
+const Navbar = ({ links, active }) => {
   return (
     <Container>
       <NavItems>
-        {links.map((link, index) => {
+        {links.map(({ text, url }, index) => {
           return (
-            <NavItem
-              $active={index === active}
-              onClick={() => setActive(index)}
-            >
-              {link}
+            <NavItem $active={index === active}>
+              <Link to={url}>{text}</Link>
             </NavItem>
           );
         })}

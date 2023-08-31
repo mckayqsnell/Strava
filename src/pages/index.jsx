@@ -126,7 +126,7 @@ const links = [
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout active={0}>
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Congratulations

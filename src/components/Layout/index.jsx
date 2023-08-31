@@ -2,10 +2,16 @@ import React from "react";
 import { memo } from "react";
 import { Container } from "./styles";
 import Navbar from "../Navbar";
-const Layout = ({ children }) => {
+const Layout = ({ children, active }) => {
   return (
     <Container>
-      <Navbar links={["a", "b", "c"]} />
+      <Navbar
+        links={[
+          { text: "a", url: "/" },
+          { text: "b", url: "/b" },
+        ]}
+        active={active}
+      />
       {children}
     </Container>
   );
